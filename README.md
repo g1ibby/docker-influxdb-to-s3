@@ -1,6 +1,11 @@
-# Docker InfluxDB to S3  [![](https://images.microbadger.com/badges/version/jacobtomlinson/influxdb-to-s3.svg)](https://microbadger.com/images/jacobtomlinson/influxdb-to-s3 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/jacobtomlinson/influxdb-to-s3.svg)](https://microbadger.com/images/jacobtomlinson/influxdb-to-s3 "Get your own image badge on microbadger.com")
+# Docker InfluxDB to S3
 
 This container periodically runs a backup of an InfluxDB database to an S3 bucket. It also has the ability to restore.
+
+## Changes from jacobtomlinson/docker-influxdb-to-s3
+
+- Update influxdb to 1.8.3 version
+- Added immediately backup when run cron command
 
 ## Usage
 
@@ -14,7 +19,7 @@ docker run \
     -e AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
     -e AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
     -e AWS_DEFAULT_REGION=us-west-2 \
-    jacobtomlinson/influxdb-to-s3:latest
+    g1ibby/backup-influxdb-to-s3:latest
 ```
 
 ### Custom cron timing
@@ -27,7 +32,7 @@ docker run \
     -e AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
     -e AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
     -e AWS_DEFAULT_REGION=us-west-2 \
-    jacobtomlinson/influxdb-to-s3:latest \
+    g1ibby/backup-influxdb-to-s3:latest \
     cron "* * * * *"
 ```
 
@@ -41,7 +46,7 @@ docker run \
     -e AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
     -e AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
     -e AWS_DEFAULT_REGION=us-west-2 \
-    jacobtomlinson/influxdb-to-s3:latest \
+    g1ibby/backup-influxdb-to-s3:latest \
     backup
 ```
 
@@ -57,7 +62,7 @@ docker run \
     -e AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
     -e AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
     -e AWS_DEFAULT_REGION=us-west-2 \
-    jacobtomlinson/influxdb-to-s3:latest \
+    g1ibby/backup-influxdb-to-s3:latest \
     restore
 ```
 
